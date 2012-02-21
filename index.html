@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Modal component for wax.mm.js</title>
+<script src='wax/modestmaps.min.js'></script>
+<script src='wax/wax.mm.min.js'></script>
+<script src='wax/modal.js'></script>
+<script>
+  var mm = com.modestmaps;
+  var url = 'http://api.tiles.mapbox.com/v3/yhahn.mapbox-streets-dev.jsonp';
+  wax.tilejson(url, function(tilejson) {
+      m = new mm.Map('map',
+          new wax.mm.connector(tilejson), null, [
+              new mm.MouseHandler(),
+              new mm.TouchHandler()
+          ]
+      );
+      var form = 'Here is some Modal content';
+      wax.mm.modal(m, form, {
+        linkTitle: 'Click me'
+        }).appendTo(m.parent);
+      m.setCenterZoom(new mm.Location(43.64828710639889,-79.44826701562498), 16);
+  });
+</script>
+<style>
+.map-tile-loaded {
+  -webkit-animation-name: 'fade-in';
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: .25s;
+  }
+  @-webkit-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+a.wax-modal {
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px;
+  z-index: 100;
+  right: 10px;
+  background: rgb(255,255,255);
+  background: rgba(255,255,255,0.65);
+  padding: 1px 5px;
+  color: #404040;
+  display: block;
+  text-decoration: none;
+  }
+  a.wax-modal:active {
+    background: #fdfdfd;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+.wax-modal-box {
+  background: #fff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  position: absolute;
+  height: 95%;
+  width: 640px;
+  height: 400px;
+  overflow: auto;
+  left: 50%;
+  margin: 0 0 0 -320px;
+  z-index: 1000;
+  top: 10px;
+  }
+  .wax-modal-box a#close {
+    background: #fff;
+    color: #000;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 15px;
+    text-align: center;
+    }
+    .wax-modal-box a#close:hover,
+    .wax-modal-box a#close:active {
+      background:#f3f2f3;
+      }
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  }
+</style>
+</head>
+<body>
+	<div id='map'></div>
+</body>
+</html>
