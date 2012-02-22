@@ -9,7 +9,7 @@
 <script src='wax/modal.js'></script>
 <script>
   var mm = com.modestmaps;
-  var url = 'http://api.tiles.mapbox.com/v3/yhahn.mapbox-streets-dev.jsonp';
+  var url = 'http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp';
   wax.tilejson(url, function(tilejson) {
       m = new mm.Map('map',
           new wax.mm.connector(tilejson), null, [
