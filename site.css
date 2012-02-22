@@ -1,0 +1,188 @@
+/* ------------------------------------------
+  Reset ♥
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+---------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+body { line-height: 1; }
+ol, ul { list-style: none;  }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+/* tables still need 'cellspacing='0'' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+/* remember to define focus styles. Hee Haw */
+:focus { outline: 0; }
+
+body {
+  font: normal 13px/18px 'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;
+  color: #404040;
+  margin: 0;
+  padding: 0
+  }
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  }
+h1 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  }
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 400;
+  }
+h3 {
+  font-size: 16px;
+  margin: 0 0 10px;
+  }
+a {
+  text-decoration: none;
+  color: #1F90FF;
+  font-weight: 500;
+  }
+pre,
+pre code {
+  font-family: 'Menlo Regular',Consolas,monospace;
+  }
+pre {
+  background: #EBF5FF;
+  font-size: 12px;
+  margin: 10px 0;
+  overflow: auto;
+  padding: 10px;
+  display: block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  }
+strong {
+  font-weight: 600;
+  }
+em {
+  text-transform: italic;
+  }
+ul {
+  list-style: square;
+  margin: 10px 0 10px 20px;
+  }
+  ul li ul {
+    list-style: none;
+    margin: 5px 0 5px 20px;
+    }
+
+.heading {
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 20px;
+  z-index: 100;
+  width: 320px;
+  }
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  }
+#modal-content {
+  display: none;
+  }
+.map-tile-loaded {
+  -webkit-animation-name: 'fade-in';
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: .25s;
+  }
+  @-webkit-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+a.wax-modal {
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px;
+  z-index: 100;
+  right: 10px;
+  background: #1F90FF;
+  padding: 1px 5px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  }
+  a.wax-modal:active {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+.wax-modal-box {
+  background: #fff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  position: absolute;
+  height: 95%;
+  width: 640px;
+  height: 400px;
+  overflow: auto;
+  left: 50%;
+  margin: 0 0 0 -320px;
+  z-index: 1000;
+  top: 10%;
+  }
+  .wax-modal-box .inner {
+    padding: 20px;
+    }
+  .wax-modal-box a#close {
+    background: #fff;
+    color: #000;
+    text-shadow: 0 1px 0 white;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #404040;
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 15px;
+    text-align: center;
+    }
+    .wax-modal-box a#close:hover,
+    .wax-modal-box a#close:active {
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+      }
