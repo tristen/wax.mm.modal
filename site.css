@@ -40,6 +40,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 :focus { outline: 0; }
 
 body {
+  background: #f5f5f5;
   font: normal 13px/18px 'Helvetica Neue',Helvetica,Verdana,Arial,sans-serif;
   color: #404040;
   margin: 0;
@@ -55,7 +56,7 @@ h1 {
 h2 {
   font-size: 18px;
   margin: 10px 0;
-  font-weight: 400;
+  font-weight: bold;
   }
 h3 {
   font-size: 16px;
@@ -71,8 +72,8 @@ pre code {
   font-family: 'Menlo Regular',Consolas,monospace;
   }
 pre {
-  background: #EBF5FF;
-  font-size: 12px;
+  background: #feffe8;
+  font-size: 13px;
   margin: 10px 0;
   overflow: auto;
   padding: 10px;
@@ -97,14 +98,17 @@ ul {
     }
 
 .heading {
-  background: #fff;
-  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #999;
+  text-shadow: 0 1px 0 #fff;
+  -moz-box-shadow: rgba(0,0,0,0.25) 0 0 8px;
+  box-shadow: rgba(0,0,0,0.25) 0 0 8px;
   position: absolute;
   top: 20px;
   left: 20px;
   padding: 20px;
   z-index: 100;
-  width: 320px;
+  width: 358px;
   }
 #map {
   position: absolute;

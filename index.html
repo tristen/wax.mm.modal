@@ -4,31 +4,11 @@
 <meta charset=utf-8 />
 <title>Modal component for wax.mm.js</title>
 <link rel='stylesheet' href='site.css'>
-<script src='wax/modestmaps.min.js'></script>
-<script src='wax/wax.mm.min.js'></script>
-<script src='wax/modal.js'></script>
-<script>
-  var mm = com.modestmaps;
-  var url = 'http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp';
-  wax.tilejson(url, function(tilejson) {
-      m = new mm.Map('map',
-          new wax.mm.connector(tilejson), null, [
-              new mm.MouseHandler(),
-              new mm.TouchHandler()
-          ]
-      );
-      var form = document.getElementById('modal-content').innerHTML;
-      wax.mm.modal(m, form, {
-        linkTitle: 'Click me'
-        }).appendTo(m.parent);
-      m.setCenterZoom(new mm.Location(43.6478,280.6421),13);
-  });
-</script>
 </head>
 <body>
   <div class='heading'>
-    <h1>wax.mm.modal demo</h1>
-    <p>Click the link at the bottom right-hand corner. <br />Fork or clone to improve or use the little script <a href='https://github.com/tristen/wax.mm.modal/blob/gh-pages/wax/modal.js'>here</a></p>
+    <h1>wax.mm.modal</h1>
+    <p><a href='http://mapbox.com/wax'>Wax</a> plugin for markers with <a href='http://modestmaps.com'>Modest Maps</a>. Click anywhere. <br />Fork to improve or use the little script <a href='https://github.com/tristen/wax.mm.marker/blob/gh-pages/wax.mm.modal.js'>here</a>.</p>
   </div>
   <div id='map'></div>
   <div id='modal-content'>
@@ -67,5 +47,26 @@ wax.tilejson(url, function(tilejson) {
 });</code></pre>
       </div>
     </div>
+
+<script src='wax/modestmaps.min.js'></script>
+<script src='wax/wax.mm.min.js'></script>
+<script src='wax.mm.modal.js'></script>
+<script>
+  var mm = com.modestmaps;
+  var url = 'http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp';
+  wax.tilejson(url, function(tilejson) {
+      m = new mm.Map('map',
+          new wax.mm.connector(tilejson), null, [
+              new mm.MouseHandler(),
+              new mm.TouchHandler()
+          ]
+      );
+      var form = document.getElementById('modal-content').innerHTML;
+      wax.mm.modal(m, form, {
+        linkTitle: 'Click me'
+        }).appendTo(m.parent);
+      m.setCenterZoom(new mm.Location(43.6478,280.6421),13);
+  });
+</script>
 </body>
 </html>
